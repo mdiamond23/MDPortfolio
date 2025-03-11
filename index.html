@@ -1,78 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=\"en\">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <title>Your Name - Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 0; background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         h1, h2 { color: #333; }
-        .contact { margin-bottom: 20px; }
-        .about { margin-bottom: 30px; }
-        .project { margin-bottom: 30px; }
+        .contact, .about, .project { margin-bottom: 20px; }
         a { color: #007BFF; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class=\"container\">
         <h1>Matthew Diamond</h1>
-        <div class="contact">
+        <div class=\"contact\">
             <p>Email: mdiamon@umich.edu</p>
             <p>Phone Number: 917-370-9232</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/matthew-diamond-815906296/" target="_blank">LinkedIn</a></p>
+            <p>LinkedIn: <a href=\"https://www.linkedin.com/in/matthew-diamond-815906296/\" target=\"_blank\">LinkedIn</a></p>
         </div>
         
-        <div class="about">
+        <div class=\"about\">
             <h2>About Me</h2>
             <p>My name is Matthew Diamond and I am a sophomore at the University of Michigan studying computer science. I have a strong passion for programming, particularly in game development. I've been making games for about 4 years now in both Unity and Unreal, and this page shows some of the cool stuff I've made!</p>
         </div>
         
         <h2>Portfolio</h2>
         
-        <div class="project">
+        <div class=\"project\">
             <h3>Multiverse Mercenaries</h3>
             <p>A fast-paced, procedurally generated 2D Action Platforming Roguelike with unique characters, levels, and over 15 items.</p>
             <p><strong>Skills Used:</strong> Unity, C#, Dijkstra's Algorithm, Aseprite</p>
-            <p><a href="https://store.steampowered.com/app/2161190/Multiverse_Mercenaries/" target="_blank">Steam Page</a></p>
-            <p><a href="https://github.com/mdiamond23/Multiverse-Mercenaries" target="_blank">Code Examples</a></p>
+            <p><a href=\"https://store.steampowered.com/app/2161190/Multiverse_Mercenaries/\" target=\"_blank\">Steam Page</a> | <a href=\"https://github.com/mdiamond23/Multiverse-Mercenaries\" target=\"_blank\">Code Examples</a></p>
+            <ul>
+                <li>Created procedural level generation system using Dijkstra's Algorithm to generate a path through two corners of a level.</li>
+                <li>Developed two characters, one meele and the other shooting, implementing unique abilities, animations, sounds, and more.</li>
+                <li>Implemented over 15 items that either augment traits of the player or create new advantages for the player.</li>
+                <li>Created and implemented every art asset in the game.</li>
+            </ul>
         </div>
         
-        <div class="project">
+        <div class=\"project\">
             <h3>Project-Parkour</h3>
             <p>A fast-paced first-person platformer focused on overcoming obstacles using abilities.</p>
-            <p><strong>Skills Used:</strong> Unity, C#, Gameplay Systems, Abilities, Level Design</p>
-            <p><a href="https://mdiamond23.github.io/W25DevBlog/" target="_blank">Dev blog</a></p>
+            <p><strong>Skills Used:</strong> Unity, C#, Design Documentation</p>
+            <p><a href=\"https://mdiamond23.github.io/W25DevBlog/\" target=\"_blank\">Dev blog</a></p>
+            <ul>
+                <li>Engineered abilities: Satchel jump, similar to Raze’s from valorant, a teleport blade inspired by the ability in apex legends, and a dash which launches the player in their desired direction procedural level generation system using Dijkstra's Algorithm to generate a path through two corners of a level.</li>
+                <li>Created ability manager: Gameplay system letting players hold two abilities in their right and left hand respectively. Inspired by the card system in neon white while taking visual inspiration from post void.</li>
+                <li>Implemented obstacles: Implemented Balloon, inspired from Neon White, Boost panel, Slingshot, turret, spikes, and more to come.</li>
+                <li>Wrote level design documentation with game design pillars to assist other developers in crafting levels.</li>
+            </ul>
         </div>
         
-        <div class="project">
-            <h3>Defenders of the Dune</h3>
+        <div class=\"project\">
+            <h3>Defenders of the Eldritch Order</h3>
             <p>An RTS game where you survive on an island full of dangerous bugs by managing sand troops and buildings.</p>
             <p><strong>Skills Used:</strong> Unity, C#, Base-Building Mechanics</p>
-            <p><a href="https://store.steampowered.com/app/3394870/" target="_blank">Steam Page</a></p>
-            <p><a href="https://github.com/mdiamond23/Defenders-of-the-Dune" target="_blank">Code Examples</a></p>
+            <p><a href=\"https://store.steampowered.com/app/3394870/\" target=\"_blank\">Steam Page</a> | <a href=\"https://github.com/mdiamond23/Defenders-of-the-Dune\" target=\"_blank\">Code Examples</a></p>
+            <ul>
+                <li>Constructed building decay: Buildings that are outside of a range of an outpost building would slowly decay and die over time. This encourages players to construct bases thoughtfully.</li>
+                <li>Outpost building. A building that would serve as an anchor for other buildings and troops. This building would allow players to set up smaller bases, where buildings would be safe, and troops would be healed.</li>
+                <li>Implemented visuals and animations that made the game prettier and gave players important information about the range of certain buildings. Additionaly, created cutscenes to set up the story.</li>
+            </ul>
         </div>
         
-        <div class="project">
-            <h3>Toon Tanks</h3>
+        <div class=\"project\">
+            <h3>Toon Tanks Demo</h3>
             <p>A short demo where a tank has to destroy enemy turrets.</p>
             <p><strong>Skills Used:</strong> Unreal Engine 5, C++</p>
-            <p><a href="https://mdiamond23.itch.io/toon-tanks-demo" target="_blank">Itch.io Page</a></p>
-            <p><a href="https://github.com/mdiamond23/Toon-Tanks" target="_blank">Code Examples</a></p>
+            <p><a href=\"https://mdiamond23.itch.io/toon-tanks-demo\" target=\"_blank\">Itch.io Page</a> | <a href=\"https://github.com/mdiamond23/Toon-Tanks\" target=\"_blank\">Code Examples</a></p>
+            <ul>
+                <li>Implemented player and enemy controllers managing tank movement, enemy targeting, and game logic.</li>
+                <li>Levraged pointers to handle health, damage, and more.</li>
+            </ul>
         </div>
         
-        <div class="project">
+        <div class=\"project\">
             <h3>Hoopin VR</h3>
             <p>A VR basketball freethrow minigame.</p>
             <p><strong>Skills Used:</strong> Unity, C#</p>
-            <p><a href="https://mdiamond23.itch.io/hoopin-vr" target="_blank">Itch.io Page</a></p>
+            <p><a href=\"https://mdiamond23.itch.io/hoopin-vr\" target=\"_blank\">Itch.io Page</a></p>
+            <ul>
+                <li>Used Unity VR controls to simulate shooting a basketball.</li>
+            </ul>
         </div>
         
-        <div class="project">
+        <div class=\"project\">
             <h3>Corrupt Eldritch Order</h3>
             <p>A 2D Action Platforming Roguelike with multiple weapons and enemies.</p>
-            <p><strong>Skills Used:</strong> Level Design Producer, Project Management</p>
-            <p><a href="https://store.steampowered.com/app/2909290/Corrupt_Eldritch_Order/" target="_blank">Steam Page</a></p>
+            <p><strong>Skills Used:</strong> Level Design, Project Management</p>
+            <p><a href=\"https://store.steampowered.com/app/2909290/Corrupt_Eldritch_Order/\" target=\"_blank\">Steam Page</a></p>
+            <ul>
+                <li>Lead level designer meeting with multiple different disciples, making sure everyone was on time with their work and assigned task based on needs of the game.</li>
+                <li>Met with higher ups and other producers to figure out strategies for the development of the game.</li>
+            </ul>
         </div>
     </div>
 </body>
