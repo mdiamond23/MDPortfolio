@@ -72,6 +72,46 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        .project {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px; /* Adjust spacing between video and text */
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.project video {
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    margin: 4px 0;
+}
+
+.project-content a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-content ul {
+    padding-left: 20px; /* Ensures bullet points are properly aligned */
+}
+
+.project-content ul li {
+    margin-bottom: 6px; /* Adjust spacing between bullet points */
+}
     </style>
 </head>
 <body>
@@ -134,20 +174,23 @@
         </div>
 
         <div class="project">
-            <source src="videos/DotD.mp4" type="video/mp4">
+            <video width="300" controls>
+                <source src="videos/DotD.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="project-content">
                 <h3>Defenders of the Dune</h3>
-                <p>An RTS game where you survive on an island full of dangerous bugs by managing sand troops and buildings.</p>
-                <p><strong>Skills Used:</strong> Unity, C#, Base-Building Mechanics</p>
-                <p><a href="https://store.steampowered.com/app/3394870/" target="_blank">Steam Page</a> | <a href="https://github.com/mdiamond23/Defenders-of-the-Dune" target="_blank">Code Examples</a></p>
+                <p>A Real-Time-Strategy game where players must protect their beach stronghold from waves of enemies, combining strategic building placement with smart offensive tactics</p>
+                <p><strong>Skills Used:</strong> Unity, C#, Enemy AI, Procedural Generation</p>
+                <p><a href="https://github.com/mdiamond23/Defenders-of-the-Dune" target="_blank">Code Examples</a></p>
                 <ul>
                     <li>Implemented building decay mechanics for strategic gameplay.</li>
-                    <li>Created functional outpost buildings.</li>
-                    <li>Designed visuals, animations, and introductory cutscenes.</li>
+                    <li>Created functional outpost buildings, integral for progressing the game.</li>
+                    <li>Implemented visuals aids like building saftey range, archer tower range, animations, and introductory cutscene.</li>
                 </ul>
             </div>
         </div>
-
+        
         <div class="project">
             <img src="toon_tanks.gif" alt="Toon Tanks Demo">
             <div class="project-content">
