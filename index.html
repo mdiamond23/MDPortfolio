@@ -4,88 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Diamond - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 800px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #333; }
-        .contact, .about, .project { margin-bottom: 20px; }
-        a { color: #007BFF; text-decoration: none; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 20px; 
+        }
+        h1, h2 { text-align: center; }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #007BFF;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        .project-content {
+            flex: 1;
+        }
+        .project a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
     <div class="container">
         <h1>Matthew Diamond</h1>
-        <div class="contact">
-            <p>Email: mdiamon@umich.edu</p>
-            <p>Phone Number: 917-370-9232</p>
-            <p><a href="https://www.linkedin.com/in/matthew-diamond-815906296/" target="_blank">LinkedIn</a></p>
-        </div>
-        
-        <div class="about">
+        <div id="about">
             <h2>About Me</h2>
-            <p>My name is Matthew Diamond, and I am a sophomore at the University of Michigan studying computer science. I have a strong passion for programming, particularly in game development. I've been making games for about 4 years now in both Unity and Unreal, and this page shows some of the cool stuff I've made!</p>
+            <p>I’m a sophomore at the University of Michigan studying computer science with a passion for game development...</p>
         </div>
         
-        <h2>Portfolio</h2>
+        <h2 id="portfolio">Portfolio</h2>
         
         <div class="project">
-            <h3>Multiverse Mercenaries</h3>
-            <p>A fast-paced, procedurally generated 2D Action Platforming Roguelike with unique characters, levels, and over 15 items.</p>
-            <p><strong>Skills Used:</strong> Unity, C#, Dijkstra's Algorithm, Aseprite</p>
-            <p><a href="https://store.steampowered.com/app/2161190/Multiverse_Mercenaries/" target="_blank">Steam Page</a> | <a href="https://github.com/mdiamond23/Multiverse-Mercenaries" target="_blank">Code Examples</a></p>
-            <ul>
-                <li>Created procedural level generation using Dijkstra's Algorithm.</li>
-                <li>Developed characters with unique abilities and animations.</li>
-                <li>Implemented diverse item mechanics to enhance gameplay.</li>
-                <li>Created all art assets.</li>
-            </ul>
+            <img src="gameplay1.gif" alt="Multiverse Mercenaries">
+            <div class="project-content">
+                <h3>Multiverse Mercenaries</h3>
+                <p>A fast-paced, procedurally generated 2D Action Platformer Roguelike...</p>
+                <p><a href="https://store.steampowered.com/app/2161190/Multiverse_Mercenaries/">Steam Page</a></p>
+            </div>
         </div>
         
         <div class="project">
-            <h3>Project Parkour</h3>
-            <p>A fast-paced first-person platformer focused on overcoming obstacles using abilities.</p>
-            <p><strong>Skills Used:</strong> Unity, C#, Gameplay Systems, Abilities, Level Design</p>
-            <p><a href="https://mdiamond23.github.io/W25DevBlog/" target="_blank">Dev Blog</a></p>
-            <ul>
-                <li>Engineered abilities such as satchel jump, teleport blade, and directional dash.</li>
-                <li>Designed ability manager for intuitive gameplay experience.</li>
-                <li>Implemented interactive obstacles and gameplay mechanics.</li>
-                <li>Authored detailed level design documentation.</li>
-            </ul>
+            <img src="gameplay2.gif" alt="Project Parkour">
+            <div class="project-content">
+                <h3>Project Parkour</h3>
+                <p>A fast-paced first-person platformer focused on overcoming obstacles...</p>
+                <p><a href="https://mdiamond23.github.io/W25DevBlog/">Dev Blog</a></p>
+            </div>
         </div>
         
         <div class="project">
-            <h3>Defenders of the Dune</h3>
-            <p>An RTS game where you survive on an island full of dangerous bugs by managing sand troops and buildings.</p>
-            <p><strong>Skills Used:</strong> Unity, C#, Base-Building Mechanics</p>
-            <p><a href="https://store.steampowered.com/app/3394870/" target="_blank">Steam Page</a> | <a href="https://github.com/mdiamond23/Defenders-of-the-Dune" target="_blank">Code Examples</a></p>
-            <ul>
-                <li>Implemented building decay mechanics for strategic gameplay.</li>
-                <li>Created functional outpost buildings.</li>
-                <li>Designed visuals, animations, and introductory cutscenes.</li>
-            </ul>
-        </div>
-        
-        <div class="project">
-            <h3>Toon Tanks Demo</h3>
-            <p>A short demo where a tank has to destroy enemy turrets.</p>
-            <p><strong>Skills Used:</strong> Unreal Engine 5, C++</p>
-            <p><a href="https://mdiamond23.itch.io/toon-tanks-demo" target="_blank">Itch.io Page</a> | <a href="https://github.com/mdiamond23/Toon-Tanks" target="_blank">Code Examples</a></p>
-            <ul>
-                <li>Implemented tank movement and targeting systems.</li>
-                <li>Managed gameplay logic using pointers for health and damage.</li>
-            </ul>
-        </div>
-        
-        <div class="project">
-            <h3>Corrupt Eldritch Order</h3>
-            <p>A 2D Action Platforming Roguelike with multiple weapons and enemies.</p>
-            <p><strong>Skills Used:</strong> Level Design, Project Management</p>
-            <p><a href="https://store.steampowered.com/app/2909290/Corrupt_Eldritch_Order/" target="_blank">Steam Page</a></p>
-            <ul>
-                <li>Led level design and managed multidisciplinary teams.</li>
-                <li>Coordinated with producers for strategic development planning.</li>
-            </ul>
+            <img src="gameplay3.gif" alt="Defenders of the Dune">
+            <div class="project-content">
+                <h3>Defenders of the Dune</h3>
+                <p>An RTS game where you manage troops and survive against sand bugs...</p>
+                <p><a href="https://store.steampowered.com/app/3394870/">Steam Page</a></p>
+            </div>
         </div>
     </div>
 </body>
