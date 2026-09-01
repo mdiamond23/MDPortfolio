@@ -62,9 +62,27 @@
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .about-card{background:linear-gradient(180deg,#0f251f,#0b1e18);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 
+    #engine details{border-color:rgba(153,255,210,.28);box-shadow:0 12px 50px rgba(0,0,0,.45),0 0 0 1px rgba(153,255,210,.08)}
+    .summary-title.featured{color:var(--link)}
+    .engine-hero{margin-bottom:22px}
+    .engine-media{border-radius:var(--radius);overflow:hidden;background:#06130f;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .engine-media video{width:100%;max-height:560px;object-fit:cover;display:block}
+    .engine-stat{display:inline-block;margin-top:16px;padding:10px 16px;border-radius:999px;background:rgba(153,255,210,.1);border:1px solid var(--ring);color:var(--link);font-weight:600;letter-spacing:.02em;font-size:14px}
+    .engine-intro{margin-top:16px;font-size:17px}
+    .engine-list{margin-top:10px;padding-left:22px}
+    .engine-list li{margin-bottom:10px}
+
+    .mini-card{grid-column:span 6;background:linear-gradient(180deg,#0f251f,#0b1e18);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .mini-card .media{background:#06130f}
+    .mini-card .media video,.mini-card .media img{width:100%;height:230px;object-fit:cover;display:block}
+    .mini-card .card-body{padding:14px 18px 18px}
+    .mini-card h4{margin:0 0 4px;font-size:16px;color:var(--accent)}
+    .mini-card p{margin:0;color:var(--muted);font-size:14px}
+
     @media (max-width:920px){
       .card{grid-template-columns:1fr}
       .about-grid{grid-template-columns:1fr}
+      .mini-card{grid-column:span 12}
     }
   </style>
 
@@ -83,12 +101,102 @@
     <nav class="nav">
       <div class="brand">Matthew Diamond</div>
       <div>
+        <a href="#engine">Diamond Engine</a>
         <a href="#game">Game Dev</a>
         <a href="#about">About</a>
         <a href="images/Matthew-Diamond-Resume-08:26:25.pdf">Resume</a>
       </div>
     </nav>
   </header>
+
+  <section class="panel" id="engine">
+    <details open>
+      <summary>
+        <div class="summary-title featured">DIAMOND ENGINE</div>
+        <div class="summary-sub">C++20 · Vulkan RHI · ECS · Jolt Physics</div>
+      </summary>
+      <div class="content">
+
+        <div class="engine-hero">
+          <div class="engine-media">
+            <video controls preload="metadata" poster="images/DE-Sponza.gif">
+              <source src="videos/DE-Sponza.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="engine-stat">4K · 75+ FPS in Sponza with hardware RT reflections + DDGI — RTX 4070 / Ryzen 7 7700X</div>
+          <p class="engine-intro">A C++20 game engine with a Vulkan renderer, ECS architecture, physics-driven characters, and a full editor toolchain.</p>
+          <div class="tags">
+            <span class="tag">C++20</span>
+            <span class="tag">Vulkan</span>
+            <span class="tag">EnTT / ECS</span>
+            <span class="tag">Jolt Physics</span>
+            <span class="tag">Hardware Ray Tracing</span>
+            <span class="tag">ImGui Editor</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/mdiamond23/DiamondEngine" target="_blank">Github Repo</a>
+          </div>
+          <ul class="engine-list">
+            <li>Architected a deferred Vulkan renderer behind a backend-agnostic RHI and a topologically-sorted render graph, featuring hardware ray-traced reflections, DDGI global illumination, SSGI/SSR, GTAO, cascaded and point shadows, TAA, and PBR materials, with graceful screen-space fallbacks for non-RT hardware.</li>
+            <li>Designed the engine around an EnTT entity-component-system, choosing plain data components over per-entity script objects so systems sweep contiguous memory pools with no pointer chasing or virtual dispatch, with one macro registering a new component type into the inspector and serializer.</li>
+            <li>Exposed gameplay through native C++ scripting where a single header pairs a component struct with the system that ticks it, and self-registering macros grant that component inspector UI, JSON save and load, and an editor add-component entry without touching a central application file.</li>
+            <li>Authored a user friendly Physics API over Jolt Physics and engineered a physics-driven character system with ragdolls, joint motors, and two-bone IK, culminating in a SIMBICON-inspired procedural locomotion controller that walks entirely through physics forces, sampling no animation clips and teleporting no transforms.</li>
+            <li>Built an asset pipeline with a registry that deduplicates textures and meshes in VRAM, hot reload that swaps assets in place without invalidating references, prefabs, BC7 texture cooking, and a one-click standalone packager.</li>
+            <li>Developed a full ImGui editor with hierarchy, inspector, content browser, and animator graph panels, transform gizmos, viewport picking, undo/redo, and play/pause/stop with snapshot-based scene restore.</li>
+            <li>Instrumented the engine with an in-editor profiler that pairs Vulkan timestamp queries for per-pass GPU timings with zero-allocation CPU scope timers applied automatically to every gameplay system, reporting smoothed averages beside rolling peaks so single-frame hitches stay visible.</li>
+            <li>Implemented the supporting game layer, including 3D positional audio with a bus mixer, a particle system with authorable emission shapes, input action mapping across four gamepads, and an anchor-based runtime UI system.</li>
+          </ul>
+        </div>
+
+        <div class="grid">
+          <article class="mini-card">
+            <div class="media">
+              <video controls preload="metadata" poster="images/DE-Reflections.gif">
+                <source src="videos/DE-Reflections.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="card-body">
+              <h4>Ray-Traced Reflections</h4>
+              <p>Hardware RT reflections with an SSR/SSGI fallback path for non-RT hardware.</p>
+            </div>
+          </article>
+
+          <article class="mini-card">
+            <div class="media">
+              <video controls preload="metadata" poster="images/DE-Physics.gif">
+                <source src="videos/DE-Physics.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="card-body">
+              <h4>Physics-Driven Locomotion</h4>
+              <p>Ragdolls, joint motors, and IK feeding a SIMBICON-inspired controller that walks on physics forces alone.</p>
+            </div>
+          </article>
+
+          <article class="mini-card">
+            <div class="media">
+              <img src="images/DE-EditorProfiler.png" alt="Diamond Engine editor with hierarchy, viewport, inspector, and live profiler" />
+            </div>
+            <div class="card-body">
+              <h4>Editor & Live Profiler</h4>
+              <p>Per-pass GPU timings, CPU scope timers, VRAM budgets, and draw call counts, live inside the ImGui editor.</p>
+            </div>
+          </article>
+
+          <article class="mini-card">
+            <div class="media">
+              <img src="images/DE-SponzaGI.png" alt="Sponza atrium lit by Diamond Engine's DDGI global illumination" />
+            </div>
+            <div class="card-body">
+              <h4>DDGI Global Illumination</h4>
+              <p>Dynamic diffuse GI probes lighting the Sponza atrium, backed by cascaded shadows and GTAO.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </details>
+  </section>
 
   <section class="panel" id="game">
     <details open>
@@ -148,8 +256,8 @@
                 <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Git</span><span class="tag">Movement Abilities</span><span class="tag">Level Design</span>
               </div>
               <div class="links">
+                <a href="https://store.steampowered.com/app/3987160/Aetherbreak/" target="_blank">Steam Page</a>
                 <a href="https://mdiamond23.github.io/W25DevBlog/" target="_blank">Dev Blog</a>
-                <a href="https://wolverinesoft-studio.itch.io/aetherbreak" target="_blank">Itch.io Page</a>
               </div>
               <ul>
                 <li>Led prototyping phase of the project for a team of 15 developers to pick up</li>
